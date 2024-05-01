@@ -6,7 +6,7 @@ import json
 from ensure import ensure_annotations
 
 
-class mongo_operation:
+class mongodb_operation:
     __collection=None # here i have created a private/protected variable
     __database=None
     
@@ -20,21 +20,21 @@ class mongo_operation:
         return client
     
     def create_database(self,collection=None):
-        if mongo_operation.__database==None:
+        if mongodb_operation.__database==None:
             client=self.create_mongo_client(collection)
             self.database=client[self.database_name]
         return self.database 
     
     def create_collection(self,collection=None):
-        if mongo_operation.__collection==None:
+        if mongodb_operation.__collection==None:
             database=self.create_database(collection)
             self.collection=database[self.collection_name]
-            mongo_operation.__collection=collection
+            mongodb_operation.__collection=collection
         
-        if mongo_operation.__collection!=collection:
+        if mongodb_operation.__collection!=collection:
             database=self.create_database(collection)
             self.collection=database[self.collection_name]
-            mongo_operation.__collection=collection
+            mongodb_operation.__collection=collection
             
         return self.collection
     
