@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: mongo_Vconnect
-Version: 0.0.12
+Version: 0.0.13
 Summary: A python package for connecting with database.
 Home-page: https://github.com/21Vijeth/Mlops_MongoDB
 Author: 21Vijeth
